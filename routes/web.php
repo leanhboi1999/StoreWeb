@@ -39,3 +39,5 @@ Route::get('/addslider', 'AdminController@addSlider');
 Route::get('/categories', 'AdminController@listCategories');
 Route::get('/products', 'AdminController@listProducts');
 Route::get('/sliders', 'AdminController@listSliders');
+
+Route::post('/saveProduct', 'ProductController@saveProduct');

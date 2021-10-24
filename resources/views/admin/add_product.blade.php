@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-body">
                 <h4 class="card-title">Add product</h4>
-                <form class="cmxform" id="commentForm" method="get" action="#">
+                {{-- <form class="cmxform" id="commentForm" method="get" action="#"> --}}
+                    {!! Form::open(['action' => 'ProductController@saveProduct', 'method' => 'POST', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
                     <fieldset>
                     <div class="form-group">
                         <label for="cname">Product Name</label>
@@ -24,16 +25,19 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="cname">Product image</label>
-                        <input id="cname" class="form-control" name="product_image" type="file" required>
+                        {{-- <label for="cname">Product image</label> --}}
+                        {{-- <input id="cname" class="form-control" name="product_image" type="file" required> --}}
+                        {!! Form::file('product_image') !!}
                     </div>
                     <div class="form-group">
                         <label for="cname">Product status</label>
                         <input id="cname" name="product_status" type="checkbox" required>
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Add product">
+                    {{-- <input class="btn btn-primary" type="submit" value="Add product"> --}}
+                    {!! Form::submit('Add product', ['class' => 'btn btn-primary']) !!}
                     </fieldset>
-                </form>
+                    {!! Form::close() !!}
+                {{-- </form> --}}
                 </div>
             </div>
             </div>
