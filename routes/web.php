@@ -25,7 +25,17 @@
 //     return '<h2>My name is ' . $name . ' and My Id is '. $id. '</h2>';
 // });
 
+use Whoops\Run;
+
 Route::get('/', 'ClientController@index');
 Route::get('/shop', 'ClientController@shop');
 Route::get('/cart', 'ClientController@cart');
 Route::get('/checkout','ClientController@checkout');
+
+Route::get('/admin', 'AdminController@dashboard');
+Route::get('/addcategory', 'AdminController@addCategory');
+Route::get('/addproduct', 'AdminController@addProduct');
+Route::get('/addslider', 'AdminController@addSlider');
+Route::get('/categories', 'AdminController@listCategories');
+Route::get('/products', 'AdminController@listProducts');
+Route::get('/sliders', 'AdminController@listSliders');
